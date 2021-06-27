@@ -5,6 +5,8 @@ public class Team {
 	String name;
 	
 	private int punti;
+	
+	private int numReporter;
 
 	public Team(Integer teamID, String name) {
 		super();
@@ -32,6 +34,14 @@ public class Team {
 	
 	public int getPunti() {
 		return punti;
+	}
+	
+	public int getNumReporter() {
+		return numReporter;
+	}
+
+	public void setNumReporter(int numReporter) {
+		this.numReporter = numReporter;
 	}
 
 	@Override

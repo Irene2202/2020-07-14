@@ -19,6 +19,8 @@ public class Model {
 	private SimpleDirectedWeightedGraph<Team, DefaultWeightedEdge> grafo;
 	private Map<Integer, Team> idMap;
 	
+	private Simulatore sim;
+	
 	public Model() {
 		dao=new PremierLeagueDAO();
 		idMap=new HashMap<>();
@@ -104,6 +106,18 @@ public class Model {
 		Collections.sort(result);
 		
 		return result;
+	}
+	
+	public void Simula(int N, int critico) {
+		sim=new Simulatore(N, critico, grafo, dao.listAllMatches(), idMap);
+	}
+	
+	public int getNumPartiteCritiche() {
+		return sim.getNumPartiteCritiche();
+	}
+	
+	public int getMediaReporter() {
+		return sim.getMediaReporter();
 	}
 	
 }
